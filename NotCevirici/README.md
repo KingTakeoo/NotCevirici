@@ -31,15 +31,7 @@ Sisteminizde C derleyicisi (GCC/MinGW) ve Raylib kurulu olmalıdır. Kurmak içi
 pacman -S mingw-w64-x86_64-raylib
 
 
-2. Adım: Projeyi Bilgisayarınıza İndirin
-
-Bağımlılıkları kurduktan sonra PowerShell veya Git Bash açarak projeyi klonlayın ve içine girin:
-
-git clone https://github.com/KULLANICI_ADIN/REPO_ADIN.git
-cd REPO_ADIN
-
-
-3. Adım: Projeyi Derleyin (Kodu .exe Yapma)
+2. Adım: Projeyi Derleyin (Kodu .exe Yapma)
 
 Projeyi ikon dosyasıyla (resource.o) birlikte, arkada siyah konsol penceresi açılmadan saf bir arayüz olarak derlemek için PowerShell'de şu komutu çalıştırın:
 
