@@ -29,4 +29,4 @@ Projeyi kendi ortamınızda derlemek için sisteminizde GCC derleyicisi ve Rayli
 Arka planda çalışan konsol penceresini gizleyerek (`-mwindows`) doğrudan saf bir Windows masaüstü uygulaması elde etmek için terminalde şu komutu çalıştırabilirsiniz:
 
 ```powershell
-gcc main.c resource.o -o NotCevirici.exe -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
+gcc main.c -o NotCevirici.exe -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
