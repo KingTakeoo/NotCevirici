@@ -1,32 +1,55 @@
-# 🎓 Not Çevirici ve Hesaplayıcı
+🎓 Not Çevirici ve Hesaplayıcı (C & Raylib)
 
-Karabük Üniversitesi ve Türkiye genelindeki üniversitelerin 100'lük not sistemine tam uyumlu, masaüstü (GUI) vize/final hesaplama uygulamasıdır. Standart siyah konsol ekranlarına bağlı kalmadan, doğrudan C dili ve Raylib grafik kütüphanesi kullanılarak sıfırdan geliştirilmiştir.
+Üniversite öğrencileri için vize (%40) ve final (%60) notlarını 100'lük sisteme göre hesaplayan, final barajını (50) kontrol eden ve geçme/kalma durumunu anlık gösteren masaüstü (GUI) uygulamasıdır. C dili ve Raylib grafik kütüphanesi kullanılarak geliştirilmiştir.
 
-## 🚀 Projenin Amacı ve Özellikleri
+🚀 Özellikler
 
-Bu proje, temel algoritma mantığını, bellek yönetimini ve kullanıcı girdilerini (input validation) görsel bir arayüzle birleştirerek sorunsuz bir masaüstü deneyimi sunmak için tasarlanmıştır.
+Ağırlıklı Ortalama: Vize (%40) ve Final (%60) notlarının hesaplanması.
 
-* **Dinamik Masaüstü Arayüzü (GUI):** Fare tıklamalarını algılayan, odaklanabilir (focus) metin kutuları ve anlık ekran yenileme.
-* **Ağırlıklı Ortalama:** Vize (%40) ve Final (%60) notlarının standartlara uygun hesaplanması.
-* **Akıllı Durum Analizi:**
-  * **Doğrudan Geçti:** 60 ve üzeri ortalama (Yeşil bildirim).
-  * **Koşullu Geçti:** 50 - 59.99 arası ortalama (Sarı bildirim - AGNO bağımlı).
-  * **Dersten Kaldı:** 50'nin altındaki ortalamalar (Kırmızı bildirim).
-  * **Final Barajı Kontrolü:** Final sınavından 50'nin altında alınması durumunda doğrudan başarısız sayılma kontrolü.
-* **Hata Yakalama (Validation):** Kullanıcının 100'den büyük bir değer girmesini anında tespit edip engelleyen sınır kontrol mekanizması.
+Final Barajı Kontrolü: Final notu 50'nin altındaysa ortalamaya bakılmaksızın doğrudan kalma uyarısı.
 
-## 🛠️ Kullanılan Teknolojiler
+Anlık Arayüz Bildirimleri:
 
-* **Programlama Dili:** C
-* **Grafik Motoru:** Raylib
-* **Derleyici:** GCC / MinGW
-* **Geliştirme Araçları:** Visual Studio Code, Git
+>= 60: Doğrudan Geçti (Yeşil)
 
-## ⚙️ Kurulum ve Derleme (Windows)
+50 - 59.99: Koşullu Geçti (Sarı)
 
-Projeyi kendi ortamınızda derlemek için sisteminizde GCC derleyicisi ve Raylib kütüphanesinin kurulu olması gerekmektedir. 
+< 50: Dersten Kaldı (Kırmızı)
 
-Arka planda çalışan konsol penceresini gizleyerek (`-mwindows`) doğrudan saf bir Windows masaüstü uygulaması elde etmek için terminalde şu komutu çalıştırabilirsiniz:
+Girdi Güvenliği (Validation): 100'den büyük sayı girilmesi durumunda dinamik hata mesajı (-2.0f hata kodu kontrolü).
 
-```powershell
-gcc main.c -o NotCevirici.exe -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
+Sessiz Çalışma: Arka plan siyah terminal ekranı gizlenmiştir (-mwindows).
+
+🛠️ Kurulum, Derleme ve Çalıştırma Rehberi
+
+Projeyi kendi bilgisayarınızda derlemek, kullanmak veya geliştirmek için sırasıyla aşağıdaki adımları izleyin:
+
+1. Adım: Raylib Kütüphanesini Kurun
+
+Sisteminizde C derleyicisi (GCC/MinGW) ve Raylib kurulu olmalıdır. Kurmak için MSYS2 terminalini açın ve şu komutu çalıştırın:
+
+pacman -S mingw-w64-x86_64-raylib
+
+
+2. Adım: Projeyi Bilgisayarınıza İndirin
+
+Bağımlılıkları kurduktan sonra PowerShell veya Git Bash açarak projeyi klonlayın ve içine girin:
+
+git clone https://github.com/KULLANICI_ADIN/REPO_ADIN.git
+cd REPO_ADIN
+
+
+3. Adım: Projeyi Derleyin (Kodu .exe Yapma)
+
+Projeyi ikon dosyasıyla (resource.o) birlikte, arkada siyah konsol penceresi açılmadan saf bir arayüz olarak derlemek için PowerShell'de şu komutu çalıştırın:
+
+gcc main.c resource.o -o NotCevirici.exe -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
+
+
+Bu komuttan sonra oluşan NotCevirici.exe dosyasına çift tıklayarak programı kullanmaya başlayabilirsiniz.
+
+👨‍💻 Geliştirici
+
+Muhammed Furkan
+
+Karabük Üniversitesi - Yazılım Mühendisliği Öğrencisi
